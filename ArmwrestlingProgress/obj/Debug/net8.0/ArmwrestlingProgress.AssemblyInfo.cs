@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArmwrestlingProgress")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49910151046fc4ee2af8f446535bb918a3002cf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArmwrestlingProgress")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArmwrestlingProgress")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+
+using Infrastructure.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,8 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
 
+builder.Services.InfrastructureServices(builder.Configuration);
+
+var app = builder.Build();
+ 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
