@@ -2,7 +2,10 @@
 
 using System.ComponentModel.Design;
 using System.Text;
+using Application.Contracts;
+using Infrastructure.Authentication;
 using Infrastructure.Data;
+using Infrastructure.Repo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +41,8 @@ namespace Infrastructure.DependencyInjection
                     (Encoding.UTF8.GetBytes(configuration["Jwt:key"]!))
                 };
             });
+            services.AddScoped<JwtService>();
+            services.AddScoped<IUser, UserRepo>();
 
             return services;
         }
