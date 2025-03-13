@@ -152,3 +152,5 @@ C:\Users\santi\Desktop\.NET\projects\ArmwrestlingProgress\ArmwrestlingProgress\b
 C:\Users\santi\Desktop\.NET\projects\ArmwrestlingProgress\ArmwrestlingProgress\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\santi\Desktop\.NET\projects\ArmwrestlingProgress\ArmwrestlingProgress\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\santi\Desktop\.NET\projects\ArmwrestlingProgress\ArmwrestlingProgress\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\santi\Desktop\.NET\projects\ArmwrestlingProgress\ArmwrestlingProgress\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\santi\Desktop\.NET\projects\ArmwrestlingProgress\ArmwrestlingProgress\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

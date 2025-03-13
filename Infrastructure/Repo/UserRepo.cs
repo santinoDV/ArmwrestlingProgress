@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Application.Contracts;
 using Infrastructure.Data;
 using Infrastructure.Authentication;
 using Microsoft.Extensions.Configuration;
@@ -20,15 +19,14 @@ namespace Infrastructure.Repo
         private readonly IConfiguration _configuration;
         private readonly JwtService _jwtService;
 
+
+
         public UserRepo (AppDbContext appDbContext, IConfiguration configuration,JwtService jwtservice)
         {
             this._dbContext = appDbContext;
             this._configuration = configuration;
             this._jwtService = jwtservice;
         }
-
-        private async Task<ApplicationUser> FindUserByEmailAsync(string email) =>
-                await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
 
         public async Task<LoginResponse> LoginUserAsync(LoginDTO loginDTO)
         {
@@ -60,6 +58,9 @@ namespace Infrastructure.Repo
 
             return new RegisterUserResponse(true, "user account Created");
         }
-        
+
+        private async Task<ApplicationUser> FindUserByEmailAsync(string email) =>
+               await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+
     }
 }
