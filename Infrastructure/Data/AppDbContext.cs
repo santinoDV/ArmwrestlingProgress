@@ -12,5 +12,7 @@ namespace Infrastructure.Data
         }
 
         public DbSet<ApplicationUser> Users { get; set; }
+        public DbSet<Exercise> Exercise { get; set; }
+        public DbSet<Note> Note { get; set; }
     }
 }

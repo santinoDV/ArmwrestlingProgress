@@ -30,6 +30,6 @@ namespace ArmwrestlingProgressAPI.Controllers
             var result = await user.RegisterUserAsync(registerDTO);
 
             return Ok(result);
-        }
+        } 
     }
 }

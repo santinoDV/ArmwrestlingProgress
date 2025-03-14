@@ -13,5 +13,8 @@ namespace Domain.Entities
         public string? Email { get; set; }
         public string? Password { get; set; }
 
+
+        public List<Exercise> Exercises { get; set; } = new();
+
     }
 }
