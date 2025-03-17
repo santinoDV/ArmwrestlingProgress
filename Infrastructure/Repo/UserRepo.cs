@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 using Infrastructure.Data;
 using Infrastructure.Authentication;
 using Microsoft.Extensions.Configuration;
-using Application.DTOs;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.Xml;
+using Application.DTOs.Login;
 
 namespace Infrastructure.Repo
 {
     internal class UserRepo : IUser
     {
         private readonly AppDbContext _dbContext;
-        private readonly IConfiguration _configuration;
         private readonly JwtService _jwtService;
 
 
@@ -24,7 +23,6 @@ namespace Infrastructure.Repo
         public UserRepo (AppDbContext appDbContext, IConfiguration configuration,JwtService jwtservice)
         {
             this._dbContext = appDbContext;
-            this._configuration = configuration;
             this._jwtService = jwtservice;
         }
 

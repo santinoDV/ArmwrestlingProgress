@@ -18,5 +18,9 @@ namespace Domain.Entities
         public DateOnly DateOnly { get; set; }
 
         public TimeOnly TimeSpan { get; set; }
+
+        // para relacionar exercise con notes
+        public Exercise? Exercise { get; set; }
+        public int ExerciseId { get; set; }
     }
 }

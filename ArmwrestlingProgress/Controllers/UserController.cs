@@ -1,5 +1,5 @@
 ﻿using Application.Contracts;
-using Application.DTOs;
+using Application.DTOs.Login;
 using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

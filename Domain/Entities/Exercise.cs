@@ -11,6 +11,8 @@ namespace Domain.Entities
             public int Id { get; set; }
             public string? NameExercise { get; set; }
             public string? DescriptionExercise { get; set; }
+            public ApplicationUser? User { get; set; }// para relacionar user
+            public int UserId { get; set; }
 
 
             public List<Note> Notes { get; set; } = new ();
