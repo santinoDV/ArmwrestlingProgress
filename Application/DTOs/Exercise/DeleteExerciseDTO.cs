@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.Excercise
+namespace Application.DTOs.Exercise
 {
-    public class CreateExerciseDTO
+    public class DeleteExerciseDTO
     {
         [Required]
         public string? NameExercise { get; set; }
-
-        public string? Description { get; set; }
     }
 }

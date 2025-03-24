@@ -1,5 +1,25 @@
 [
   {
+    "ContainingType": "ArmwrestlingProgressAPI.Controllers.ExerciseController",
+    "Method": "GetExercises",
+    "RelativePath": "api/Exercise/getExercises",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.DTOs.Exercise.ResponseExerciseDTO, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ArmwrestlingProgressAPI.Controllers.UserController",
     "Method": "LogUserIn",
     "RelativePath": "api/User/login",
@@ -9,13 +29,13 @@
     "Parameters": [
       {
         "Name": "loginDTO",
-        "Type": "Application.DTOs.LoginDTO",
+        "Type": "Application.DTOs.Login.LoginDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.DTOs.LoginResponse",
+        "Type": "Application.DTOs.Login.LoginResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,13 +55,13 @@
     "Parameters": [
       {
         "Name": "registerDTO",
-        "Type": "Application.DTOs.RegisterUserDTO",
+        "Type": "Application.DTOs.Login.RegisterUserDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.DTOs.LoginResponse",
+        "Type": "Application.DTOs.Login.LoginResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",

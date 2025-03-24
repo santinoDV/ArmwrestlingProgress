@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.DTOs.Login;
 
-namespace Application.Contracts
+namespace Application.Contracts.Persistence
 {
     public interface IUser
     {

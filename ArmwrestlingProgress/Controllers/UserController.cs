@@ -1,4 +1,4 @@
-﻿using Application.Contracts;
+﻿using Application.Contracts.Persistence;
 using Application.DTOs.Login;
 using Domain.Entities;
 using Microsoft.AspNetCore.Http;

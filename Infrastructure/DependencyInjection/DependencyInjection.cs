@@ -2,7 +2,7 @@
 
 using System.ComponentModel.Design;
 using System.Text;
-using Application.Contracts;
+using Application.Contracts.Persistence;
 using Infrastructure.Authentication;
 using Infrastructure.Data;
 using Infrastructure.Repo;
@@ -43,6 +43,7 @@ namespace Infrastructure.DependencyInjection
             });
 
             services.AddScoped<JwtService>();
+            services.AddScoped<IExercise, ExerciseRepo>();
             services.AddScoped<IUser, UserRepo>();
 
             return services;

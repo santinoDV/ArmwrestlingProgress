@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.Excercise
+namespace Infrastructure.Repo
 {
-    public class ResponseExerciseDTO
+    public interface INoteRepo
     {
 
     }

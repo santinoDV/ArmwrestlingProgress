@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Contracts
+namespace Application.DTOs.Exercise
 {
-    public class IExcercise
-    {
-    }
+    public record CreateExResponseDTO(bool Flag, string Message = null!);
+    
 }

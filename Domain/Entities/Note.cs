@@ -17,10 +17,10 @@ namespace Domain.Entities
 
         public DateOnly DateOnly { get; set; }
 
-        public TimeOnly TimeSpan { get; set; }
+        public TimeSpan Duration { get; set; }
 
         // para relacionar exercise con notes
-        public Exercise? Exercise { get; set; }
+        public Exercise? Exercise { get; set; } // para relacionar con el ejercicio
         public int ExerciseId { get; set; }
     }
 }
