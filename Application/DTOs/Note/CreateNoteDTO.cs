@@ -14,7 +14,7 @@ namespace Application.DTOs.Note
         public int Sets { get; set; }
         public int Reps { get; set; }
         [Required]
-        public TypeExercise TypeExercise { get; set; }
+        public TypeExercise Type { get; set; }
         [Required]
         public DateOnly DateOnly { get; set; }
         public TimeSpan Duration {  get; set; }

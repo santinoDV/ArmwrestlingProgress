@@ -1,6 +1,8 @@
 ﻿using System.Security.Claims;
+using Application.Common;
 using Application.Contracts.Service;
 using Application.DTOs.Note;
+using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,15 +20,23 @@ namespace ArmwrestlingProgressAPI.Controllers
         }
         [HttpPost("newnote")]
         [Authorize]
-        public async Task<ActionResult<CreateNoteResponseDTO>> CreateNote(CreateNoteDTO createNoteDTO)
+        public async Task<ActionResult<OperationResult<Exercise>>> CreateNote(CreateNoteDTO createNoteDTO)
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId =  User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             if(userId == null) return Unauthorized();
 
-            var ret = _note.
+            return await _note.CreateNoteAsync(createNoteDTO,userId);
             // ahora necesito una forma que identifique el ejercicio correspondiente
 
+        }
+
+        [HttpDelete("deletenote")]
+        [Authorize]
+
+        public async Task<ActionResult<OperationResult<Note>>> DeleteNote(DeleteNoteDTO deleteNoteDTO)
+        {
+            // confirmar existencia de 
         }
     }
 }

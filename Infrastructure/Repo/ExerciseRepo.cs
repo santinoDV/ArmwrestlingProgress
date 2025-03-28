@@ -62,7 +62,7 @@ namespace Infrastructure.Repo
                 Notes = new List<Note>(),
                 UserId = userId ?? 0,
             };
-            await _DbContext.AddAsync(exercise);
+            await _DbContext.Exercises.AddAsync(exercise);
 
              await _DbContext.SaveChangesAsync();
 
@@ -71,6 +71,18 @@ namespace Infrastructure.Repo
 
         //QUERY METHODS
 
+        /// <summary>
+        /// Finds exercise from the user 
+        /// </summary>
+        /// <param name="nameExercise"></param>
+        /// <param name="userId"></param>
+        /// <returns>returns null or the exercise object.</returns>
+        public async Task<Exercise?> FindExerciseAsync(int? userId,string nameExercise)
+        {
+
+            return await _DbContext.Exercises.Where(e => e.NameExercise == nameExercise 
+                && e.UserId == userId).FirstOrDefaultAsync();
+        }
         
     }
 }
