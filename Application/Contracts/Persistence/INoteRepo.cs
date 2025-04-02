@@ -10,6 +10,8 @@ namespace Infrastructure.Repo.Persistence
 {
     public interface INoteRepo
     {
-        public Task<bool> SaveNote(Note addnote);
+        public Task<Note?> SaveNote(Note addnote);
+        public Task<Note?> DeleteNoteDB(Note note);
+        public Task<Note> GetNoteDB(DateOnly dateOnly);
     }
 }

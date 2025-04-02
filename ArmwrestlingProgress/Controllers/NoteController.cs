@@ -36,7 +36,9 @@ namespace ArmwrestlingProgressAPI.Controllers
 
         public async Task<ActionResult<OperationResult<Note>>> DeleteNote(DeleteNoteDTO deleteNoteDTO)
         {
-            // confirmar existencia de 
+            // confirmar existencia de el ejercicio? confirmar la existencia del note? borrar
+
+
         }
     }
 }

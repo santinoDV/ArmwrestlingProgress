@@ -12,5 +12,6 @@ namespace Application.Contracts.Service
     public interface INote
     {
         Task<OperationResult<Exercise>>CreateNoteAsync(CreateNoteDTO createNoteDTO, string userId);
+        Task<OperationResult<Note>> DeleteNoteAsync(DeleteNoteDTO deleteNoteDTO, string userId);
     }
 }

@@ -22,11 +22,11 @@ namespace Infrastructure.Repo
 
         // CRUD METHODS
 
-        public async Task<bool> SaveNote(Note addnote)
+        public async Task<Note?> SaveNote(Note addnote)
         {
               var ret = await _DbContext.Notes.AddAsync(addnote);
-              if(ret == null) return false;
-              return true;
+              if(ret == null) return null;
+              return addnote;
 
         }
         //  QUERY METHODS

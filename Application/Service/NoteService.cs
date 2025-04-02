@@ -31,13 +31,13 @@ namespace Application.Service
         /// <param name="createNoteDTO">The Note data to be added.</param>
         /// <param name="userId">userId</param>
         /// <returns>Returns 200 OK with the created Exercise if successful, otherwise an error response.</returns>
-        public async Task<OperationResult<Exercise>> CreateNoteAsync(CreateNoteDTO createNoteDTO, string userId)
+        public async Task<OperationResult<NoteResponseDTO>> CreateNoteAsync(CreateNoteDTO createNoteDTO, string userId)
         {
             int.TryParse(userId, out var usId);
 
             var ExerciseRelated = await _exercise.FindExerciseAsync(usId, createNoteDTO.NameExercise);
 
-            if (ExerciseRelated == null) return OperationResult<Exercise>.Fail("error finding exercise"); ;
+            if (ExerciseRelated == null) return OperationResult<NoteResponseDTO>.Fail("error finding exercise"); 
 
              Note addnote = new Note
             {
@@ -50,11 +50,44 @@ namespace Application.Service
                 ExerciseId = ExerciseRelated.Id,
             };
 
-            var flagNote = await _noterepo.SaveNote(addnote);
+            var retNote = await _noterepo.SaveNote(addnote);
 
-            return OperationResult<Exercise>.Ok(ExerciseRelated);
+            NoteResponseDTO noteResponseDTO = new NoteResponseDTO
+            {
+                Sets = retNote?.Sets,
+                Reps = retNote?.Reps,
+                Type = retNote?.Type,
+                DateOnly = retNote?.DateOnly,
+                Duration = retNote?.Duration,
+            };
+
+
+            return OperationResult<NoteResponseDTO>.Ok(noteResponseDTO);
 
             
+        }
+    
+        /// <summary>
+        /// Deleting note operation method
+        /// </summary>
+        /// <param name="deleteNoteDTO"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<OperationResult<NoteResponseDTO>> DeleteNoteAsync(DeleteNoteDTO deleteNoteDTO, string userId)
+        {
+            int.TryParse(userId, out var usId);
+            var exercise = await _exercise.FindExerciseAsync(usId, deleteNoteDTO.NameExercise);
+            if (exercise == null) return OperationResult<NoteResponseDTO>.Fail("failed finding Exercise");
+
+            
+            var note = await _noterepo.GetNoteDB(deleteNoteDTO.DateOnly);
+            if (note == null) return OperationResult<NoteResponseDTO>.Fail("Note not Found");
+
+            var ret = _noterepo.DeleteNoteDB(note);
+
+            return OperationResult<NoteResponseDTO>.Ok(ret);
+
+
         }
     }
 }
